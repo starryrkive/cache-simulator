@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Cache Replacement Visualizer</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<h1 class="title">Cache Replacement Visualizer</h1>
+
+<div class="panel">
+
+<label>Cache Capacity</label>
+<input id="capacity" type="number" value="3">
+
+<label>Policy</label>
+<select id="policy">
+<option>FIFO</option>
+<option>LRU</option>
+<option>LFU</option>
+<option>OPT</option>
+<option>COMPARE</option>
+</select>
+
+<label>Access Sequence</label>
+<input id="trace" type="text" placeholder="1 2 3 1 4 2">
+
+<button onclick="generateRandom()">Generate Random Workload</button>
+
+<button class="runButton" onclick="startSimulation()">
+Run Simulation
+</button>
+
+</div>
+
+<div class="visual-section">
+
+<h2>Cache</h2>
+<div id="cacheContainer"></div>
+
+<h2>Access Timeline</h2>
+<div id="timeline"></div>
+
+</div>
+
+<h2 class="resultsTitle">Results</h2>
+
+<div id="resultsCard">
+<div class="resultRow">
+<span class="label">Hits</span>
+<span id="hits">0</span>
+</div>
+
+<div class="resultRow">
+<span class="label">Misses</span>
+<span id="misses">0</span>
+</div>
+
+<div class="resultRow">
+<span class="label">Hit Ratio</span>
+<span id="ratio">0</span>
+</div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
